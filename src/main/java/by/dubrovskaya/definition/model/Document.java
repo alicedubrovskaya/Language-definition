@@ -9,11 +9,13 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.Instant;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
+
+@Entity
 public class Document {
 
     @Id
