@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class WordServiceImpl implements WordService {
 
-    private final StringService stringService;
+    private final StringServiceImpl stringService;
     private static final Integer N_GRAM_SIZE = 3;
     private static final Integer MAX_N_GRAM_SIZE = 500;
 

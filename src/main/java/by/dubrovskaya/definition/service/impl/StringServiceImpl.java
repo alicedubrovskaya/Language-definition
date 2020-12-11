@@ -1,12 +1,13 @@
 package by.dubrovskaya.definition.service.impl;
 
+import by.dubrovskaya.definition.service.StringService;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 @Service
-public class StringService implements by.dubrovskaya.definition.service.StringService {
+public class StringServiceImpl implements StringService {
     private static final String DISTINCT_WORDS_REGEX = "[\\s\n]";
     private static final String CLEAR_TEXT_REGEX = "[,.!?:()—#\\-\\[\\]]";
 

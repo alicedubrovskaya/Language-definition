@@ -22,8 +22,12 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(columnDefinition = "TEXT")
     private String text;
+
+    @Column(columnDefinition = "TEXT")
     private String compiledNgrams;
+
     @Enumerated(EnumType.STRING)
     private Language language;
 

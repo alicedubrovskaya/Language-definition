@@ -3,6 +3,7 @@ package by.dubrovskaya.definition.service.impl;
 import by.dubrovskaya.definition.exception.ServiceException;
 import by.dubrovskaya.definition.model.Document;
 import by.dubrovskaya.definition.model.enumeration.Language;
+import by.dubrovskaya.definition.repository.DocumentRepository;
 import by.dubrovskaya.definition.service.FileService;
 import by.dubrovskaya.definition.service.HtmlParser;
 import by.dubrovskaya.definition.service.JsonComponent;
@@ -21,6 +22,7 @@ public class FileServiceImpl implements FileService {
     private final HtmlParser htmlParser;
     private final JsonComponent json;
     private final WordService wordService;
+    private final DocumentRepository documentRepository;
 
     @SneakyThrows
     @Override
@@ -35,7 +37,7 @@ public class FileServiceImpl implements FileService {
                 .language(Language.valueOf(language))
                 .compiledNgrams(ngramFrequencyJson)
                 .build();
-//        documentRepository.save(document);
+        documentRepository.save(document);
     }
 
     private void validateFile(MultipartFile file) {

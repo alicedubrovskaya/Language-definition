@@ -17,6 +17,5 @@ public class FileController {
     public void uploadDocument(@RequestParam("file") MultipartFile file,
                                @RequestParam("language") String language) {
         fileService.storeFile(file,language);
-
     }
 }
