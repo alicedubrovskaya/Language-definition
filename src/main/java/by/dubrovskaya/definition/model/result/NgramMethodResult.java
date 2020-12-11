@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class NgramMethodRecognitionResult {
+public class NgramMethodResult {
 
     private Integer rank;
     private Language language;
