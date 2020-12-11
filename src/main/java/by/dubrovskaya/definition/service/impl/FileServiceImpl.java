@@ -13,7 +13,11 @@ import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Map;
+import java.util.Scanner;
 
 @Service
 @RequiredArgsConstructor
@@ -44,5 +48,23 @@ public class FileServiceImpl implements FileService {
         if (file.isEmpty()) {
             throw new ServiceException("Uploaded file is empty.Please try again");
         }
+    }
+
+    @Override
+    public String getFromFile(String filePath) {
+        String absoluteFilePath = new File(filePath).getAbsolutePath();
+        StringBuilder result = new StringBuilder();
+
+        try (FileReader fr = new FileReader(absoluteFilePath);
+             Scanner in = new Scanner(fr);
+        ) {
+            in.useDelimiter("\n");
+            while (in.hasNextLine()) {
+                String line = in.nextLine();
+                result.append(line + "\n");
+            }
+        } catch (IOException e) {
+        }
+        return result.toString();
     }
 }

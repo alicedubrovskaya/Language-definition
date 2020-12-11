@@ -11,6 +11,5 @@ public interface WordService {
 
     List<String> receiveClearedDistinctWords(String dirtyText);
 
-
     int gramWeight(List<String> words, String gram);
 }

@@ -2,6 +2,7 @@ package by.dubrovskaya.definition.controller;
 
 import by.dubrovskaya.definition.model.result.AlphabeticMethodResult;
 import by.dubrovskaya.definition.model.result.NgramMethodResult;
+import by.dubrovskaya.definition.model.result.OwnMethodResult;
 import by.dubrovskaya.definition.service.RecognizerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,11 @@ public class RecognizerController {
     @GetMapping("/alphabet")
     public AlphabeticMethodResult recognizeByAlphabeticMethod(@RequestParam("file") MultipartFile file) {
         return recognizerService.recognizeByAlphabetMethod(file);
+    }
+
+    @GetMapping("/own")
+    public OwnMethodResult recognizeByOwnMethod(@RequestParam("file") MultipartFile file) {
+        return recognizerService.recognizeByOwnMethod(file);
     }
 
 }

@@ -10,10 +10,9 @@ import java.util.stream.Stream;
 public class StringServiceImpl implements StringService {
     private static final String DISTINCT_WORDS_REGEX = "[\\s\n]";
     private static final String CLEAR_TEXT_REGEX = "[,.!?:()—#\\-\\[\\]]";
-
     @Override
     public String clearTextFromAuxiliarySymbols(String text) {
-        return text.replace(CLEAR_TEXT_REGEX, "");
+        return text.replaceAll(CLEAR_TEXT_REGEX, "");
     }
 
     @Override

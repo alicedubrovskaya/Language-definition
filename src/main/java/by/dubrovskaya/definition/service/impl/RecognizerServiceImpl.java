@@ -5,11 +5,9 @@ import by.dubrovskaya.definition.model.Document;
 import by.dubrovskaya.definition.model.enumeration.Language;
 import by.dubrovskaya.definition.model.result.AlphabeticMethodResult;
 import by.dubrovskaya.definition.model.result.NgramMethodResult;
+import by.dubrovskaya.definition.model.result.OwnMethodResult;
 import by.dubrovskaya.definition.repository.DocumentRepository;
-import by.dubrovskaya.definition.service.HtmlParser;
-import by.dubrovskaya.definition.service.JsonComponent;
-import by.dubrovskaya.definition.service.RecognizerService;
-import by.dubrovskaya.definition.service.WordService;
+import by.dubrovskaya.definition.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.data.util.Pair;
@@ -25,14 +23,15 @@ import static by.dubrovskaya.definition.model.enumeration.Language.RUSSIAN;
 @Service
 @RequiredArgsConstructor
 public class RecognizerServiceImpl implements RecognizerService {
-
-    private static final Integer N_GRAM_SIZE = 3;
-    private static final Integer MAX_N_GRAM_SIZE = 500;
-
     private final HtmlParser htmlParser;
     private final JsonComponent jsonComponent;
     private final WordService wordService;
+    private final OwnRecognizer ownRecognizer;
     private final DocumentRepository documentRepository;
+
+
+    private static final Integer N_GRAM_SIZE = 3;
+    private static final Integer MAX_N_GRAM_SIZE = 500;
 
     @SneakyThrows
     @Override
@@ -83,6 +82,7 @@ public class RecognizerServiceImpl implements RecognizerService {
         return AlphabeticMethodResult.of(languageToFrequencyRation);
     }
 
+
     private NgramMethodResult createRecognizeResult(Integer rank, String testedDoc, Document foundedDoc) {
         return NgramMethodResult.builder()
                 .rank(rank)
@@ -92,5 +92,8 @@ public class RecognizerServiceImpl implements RecognizerService {
                 .build();
     }
 
-
+    @Override
+    public OwnMethodResult recognizeByOwnMethod(MultipartFile file) {
+        return ownRecognizer.recognize(file);
+    }
 }
