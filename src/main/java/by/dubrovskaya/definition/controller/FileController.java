@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("/upload")
 @RequiredArgsConstructor
 public class FileController {
     private final FileService fileService;
