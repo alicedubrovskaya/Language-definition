@@ -3,9 +3,9 @@ package by.dubrovskaya.definition.service.impl;
 import by.dubrovskaya.definition.exception.ServiceException;
 import by.dubrovskaya.definition.model.Document;
 import by.dubrovskaya.definition.model.enumeration.Language;
-import by.dubrovskaya.definition.model.result.AlphabeticMethodResult;
-import by.dubrovskaya.definition.model.result.NgramMethodResult;
-import by.dubrovskaya.definition.model.result.OwnMethodResult;
+import by.dubrovskaya.definition.model.AlphabeticMethodResult;
+import by.dubrovskaya.definition.model.NgramMethodResult;
+import by.dubrovskaya.definition.model.OwnMethodResult;
 import by.dubrovskaya.definition.repository.DocumentRepository;
 import by.dubrovskaya.definition.service.*;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ public class RecognizerServiceImpl implements RecognizerService {
     private final HtmlParser htmlParser;
     private final JsonComponent jsonComponent;
     private final WordService wordService;
-    private final OwnRecognizer ownRecognizer;
+    private final OwnRecognizerService ownRecognizer;
     private final DocumentRepository documentRepository;
 
 

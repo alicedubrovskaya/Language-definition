@@ -1,8 +1,8 @@
 package by.dubrovskaya.definition.controller;
 
-import by.dubrovskaya.definition.model.result.AlphabeticMethodResult;
-import by.dubrovskaya.definition.model.result.NgramMethodResult;
-import by.dubrovskaya.definition.model.result.OwnMethodResult;
+import by.dubrovskaya.definition.model.AlphabeticMethodResult;
+import by.dubrovskaya.definition.model.NgramMethodResult;
+import by.dubrovskaya.definition.model.OwnMethodResult;
 import by.dubrovskaya.definition.service.RecognizerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

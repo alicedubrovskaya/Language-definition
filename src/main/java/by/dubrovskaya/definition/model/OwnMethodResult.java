@@ -1,4 +1,4 @@
-package by.dubrovskaya.definition.model.result;
+package by.dubrovskaya.definition.model;
 
 
 import by.dubrovskaya.definition.model.enumeration.Language;

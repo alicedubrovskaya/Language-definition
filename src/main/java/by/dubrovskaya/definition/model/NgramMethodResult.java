@@ -1,7 +1,6 @@
-package by.dubrovskaya.definition.model.result;
+package by.dubrovskaya.definition.model;
 
 
-import by.dubrovskaya.definition.model.Document;
 import by.dubrovskaya.definition.model.enumeration.Language;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

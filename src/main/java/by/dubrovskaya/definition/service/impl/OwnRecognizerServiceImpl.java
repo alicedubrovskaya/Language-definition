@@ -1,7 +1,7 @@
 package by.dubrovskaya.definition.service.impl;
 
 import by.dubrovskaya.definition.model.enumeration.Language;
-import by.dubrovskaya.definition.model.result.OwnMethodResult;
+import by.dubrovskaya.definition.model.OwnMethodResult;
 import by.dubrovskaya.definition.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -15,7 +15,7 @@ import static by.dubrovskaya.definition.model.enumeration.Language.RUSSIAN;
 
 @Service
 @RequiredArgsConstructor
-public class OwnRecognizerImpl implements OwnRecognizer {
+public class OwnRecognizerServiceImpl implements OwnRecognizerService {
     private final HtmlParser htmlParser;
     private final FileService fileService;
     private final WordService wordService;
